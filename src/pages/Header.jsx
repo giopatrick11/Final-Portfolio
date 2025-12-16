@@ -13,25 +13,40 @@ export default function Header() {
         <h1 className="font-dm font-black text-[#7545B0] text-[2.25rem] lg:text-[2.5rem]">
           Gio
         </h1>
-        <ul className="hidden lg:flex text-[1.5rem] lg:text-[1.5rem] font-dm font-medium gap-8">
+
+        <ul className="hidden lg:flex items-center gap-8 font-dm font-medium text-[1.5rem] leading-none">
           <li>
             <a
-              href="#about Me"
-              className="flex transition-all duration-200 hover:bg-muted hover:-translate-y-1"
+              href="#About"
+              className="inline-block transition-all duration-200 hover:-translate-y-1"
             >
               About Me
             </a>
           </li>
+
           <li>
             <a
-              href="#about Me"
-              className="flex transition-all duration-200 hover:bg-muted hover:-translate-y-1"
+              href="#Projects"
+              className="inline-block transition-all duration-200 hover:-translate-y-1"
             >
               Projects
             </a>
           </li>
+
           <li>
-            <a href="#contact" onClick={() => setOpen(false)}>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=giopatrick11@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+          inline-flex items-center
+          border border-black rounded-md
+          px-4 py-2.5
+          transition-all duration-200
+          hover:bg-black hover:text-white
+          hover:-translate-y-1
+        "
+            >
               Contact Me
             </a>
           </li>
@@ -58,17 +73,22 @@ export default function Header() {
         <div className="mt-3 px-5 rounded-l bg-[#EBEBEB] p-6">
           <ul className="flex flex-col gap-4 text-[1.25rem] font-dm">
             <li>
-              <a href="#about" onClick={() => setOpen(false)}>
+              <a href="#About" onClick={() => setOpen(false)}>
                 About Me
               </a>
             </li>
             <li>
-              <a href="#projects" onClick={() => setOpen(false)}>
+              <a href="#Projects" onClick={() => setOpen(false)}>
                 Projects
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={() => setOpen(false)}>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=giopatrick11@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
                 Contact Me
               </a>
             </li>
