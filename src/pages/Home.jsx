@@ -39,17 +39,17 @@ export default function Home() {
         id="About"
         className="bg-[#EBEBEB] mx-4 px-6 py-8 rounded-xl lg:mx-[2.5rem] lg:px-[7.063rem] lg:py-[4.625rem]"
       >
-        <div className="mx-auto flex max-w-6xl items-start flex-col lg:flex-row lg:items-start lg:gap-[11.875] lg:justify-center gap-10 ">
+        <div className="mx-auto flex max-w-6xl items-start flex-col lg:flex-row lg:items-start lg:gap-30 lg:justify-center gap-10 ">
           <div className="flex max-w-md flex-col gap-4 text-center lg:text-left">
-            <h1 className="font-black font-inter text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] tracking-[-0.01em]">
+            <h1 className="font-black font-inter text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] leading-[0.8] tracking-[-0.01em]">
               Gio Patrick
             </h1>
             <img
               src={arrow}
               alt="underline"
-              className="w-[14rem] mx-auto lg:mx-0 -mt-4"
+              className="w-[14] mx-auto lg:mx-0 -mt-4"
             />
-            <h3 className="font-dm font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] tracking-[-0.06em] text-[#7545B0]">
+            <h3 className="font-dm font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] tracking-[-0.06em] leading-[0.8] text-[#7545B0]">
               Full-Stack Developer
             </h3>
 
@@ -94,12 +94,12 @@ export default function Home() {
             </div>
           </div>
           <p className="max-w-xl text-[1rem] md:text-[1.125rem] leading-relaxed lg:text-left text-center self-center">
-            I’m a full-stack developer building modern web applications with
-            React and Tailwind CSS on the frontend, and PHP with Laravel on the
-            backend. I focus on role-based systems, structured data, and
-            responsive interfaces designed around real user workflows. I value
-            clean, maintainable code, performance, and reliability, and I adapt
-            quickly to new tools and project needs.
+            I’m a BSIT graduate and full-stack developer building modern web
+            applications with React and Tailwind CSS on the frontend, and PHP
+            with Laravel on the backend. I focus on role-based systems,
+            structured data, and responsive interfaces designed around real user
+            workflows. I value clean, maintainable code, performance, and
+            reliability, and I adapt quickly to new tools and project needs.
           </p>
         </div>
         <div className="mx-auto lg:mx-30 max-w-2xl rounded-xl border border-gray-400 p-4 mt-10">
