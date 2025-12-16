@@ -406,7 +406,7 @@ export default function Home() {
         >
           <div className="flex items-center gap-6">
             <a
-              href="https://www.linkedin.com/mynetwork/grow/ "
+              href="https://www.linkedin.com/in/giocimeni/ "
               target="_blank"
               rel="noopener noreferrer"
             >
