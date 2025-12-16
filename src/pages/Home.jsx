@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Header from "./Header.jsx";
+
 import arrow from "../assets/arrow-2.svg";
 import email from "../assets/email.svg";
 import github from "../assets/github.svg";
@@ -12,41 +15,18 @@ import login from "../assets/login.svg";
 import signup from "../assets/signup.svg";
 import petrack1 from "../assets/petrack1.svg";
 import petrack2 from "../assets/petrack2.svg";
+import vk1 from "../assets/vk1.svg";
+import vk2 from "../assets/vk2.svg";
+import link1 from "../assets/link1.svg";
+import github1 from "../assets/github1.svg";
+import email1 from "../assets/email1.svg";
 
 export default function Home() {
   return (
-    <main className="animate-fade-in ">
-      <section className="flex items-center justify-between px-[3.125rem] pt-[48px]">
-        <h1 className="font-dm font-black text-[#7545B0] text-[2.5rem]">Gio</h1>
-        <ul className="flex text-[1.5rem] font-dm font-medium gap-[2.125rem]">
-          <li>
-            <a
-              href="#about Me"
-              className="flex transition-all duration-200 hover:bg-muted hover:-translate-y-1"
-            >
-              About Me
-            </a>
-          </li>
-          <li>
-            <a
-              href="#about Me"
-              className="flex transition-all duration-200 hover:bg-muted hover:-translate-y-1"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#about Me"
-              className="flex transition-all duration-200 hover:bg-muted hover:-translate-y-1"
-            >
-              Contact Me
-            </a>
-          </li>
-        </ul>
-      </section>
+    <main className="">
+      <Header />
 
-      <h1 className="font-inter font-bold text-[6.25rem] tracking-[-0.05rem] max-w-[1200px] mx-auto text-center leading-[0.95] py-[11.625rem]">
+      <h1 className="font-inter font-bold text-[2.5rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[6.25rem] -tracking-[0.02rem]  -lg:tracking-[0.05rem] max-w-[1200px] mx-auto text-center lg:leading-[0.95] py-[-4rem] md:py-[6rem] lg:py-[11.625rem]">
         Modern Web Developer Delivering Full-Stack Solutions
       </h1>
 
@@ -162,7 +142,7 @@ export default function Home() {
         <img src={vite} alt="Viite Logo" className="" />
       </div>
 
-      <section className="bg-[#EBEBEB]">
+      <section className="bg-[#EBEBEB] py-[6.25rem]">
         <div className="px-[2.375rem]">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4">
             <h1 className="font-black font-inter text-[3.75rem] tracking-[-0.01em]">
@@ -213,7 +193,7 @@ export default function Home() {
                     <img
                       src={login}
                       alt="Log-In Page"
-                      className="h-[32rem] rounded-xl"
+                      className="w-full h-auto rounded-xl"
                     />
                   </div>
                 </a>
@@ -231,7 +211,7 @@ export default function Home() {
                     <img
                       src={signup}
                       alt="Signup Page"
-                      className="h-[32rem] rounded-xl"
+                      className="w-full h-auto rounded-xl"
                     />
                   </div>
                 </a>
@@ -275,7 +255,7 @@ export default function Home() {
                     <img
                       src={petrack2}
                       alt="Log-In Page"
-                      className="h-[32rem] rounded-xl"
+                      className="w-full h-auto rounded-xl"
                     />
                   </div>
                 </a>
@@ -293,7 +273,7 @@ export default function Home() {
                     <img
                       src={petrack1}
                       alt="Signup Page"
-                      className="h-[32rem] rounded-xl"
+                      className="w-full h-auto rounded-xl"
                     />
                   </div>
                 </a>
@@ -305,19 +285,19 @@ export default function Home() {
           <div className="py-[4.438rem]">
             <div className="items-start flex flex-col">
               <h3 className="font-dm text-[2rem] font-bold tracking-[-0.05em]">
-                Pet - Track
+                Videokeman
               </h3>
               <p className="italic text-[1.25rem] tracking-[-0.05em] py-2   ">
-                React • JavaScript • Tailwind • UI State Management
+                PHP • MySQL • JavaScript • HTML • CSS
               </p>
               <p className="text-[1.25rem] tracking-[-0.05em] max-w-[40rem]">
-                A frontend-focused pet care management interface built with
-                React, featuring modular components, client-side routing, and
-                dynamic UI state handling. The application presents pet
-                profiles, vaccination tracking, and appointment information
-                through a clean, responsive layout, emphasizing usability,
-                component reusability, and clear information hierarchy for an
-                intuitive pet management experience.
+                A web-based music lyrics platform built with core PHP and MySQL,
+                featuring dynamic song browsing, search, pagination, and
+                user-submitted content. The system supports session-based
+                authentication, lyric viewing pages, random song discovery, and
+                structured database integration to manage songs, users, and
+                uploads through a simple, responsive interface focused on
+                usability and content accessibility.
               </p>
               <a href="" className="underline text-[1.25rem] flex gap-1 py-2">
                 Check on github
@@ -325,7 +305,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex justify-center gap-[1.125rem] py-[1.875rem]">
+            <div className="flex justify-center gap-[1.125rem] mt-[1.875rem]">
               <div className="flex flex-col items-center gap-4">
                 <a
                   href="https://github.com/giopatrick11/laundry-shop-login"
@@ -335,9 +315,9 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
                     <img
-                      src={login}
+                      src={vk1}
                       alt="Log-In Page"
-                      className="h-[32rem] rounded-xl"
+                      className="w-full h-auto rounded-xl"
                     />
                   </div>
                 </a>
@@ -353,9 +333,9 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
                     <img
-                      src={signup}
+                      src={vk2}
                       alt="Signup Page"
-                      className="h-[32rem] rounded-xl"
+                      className="w-full h-auto rounded-xl"
                     />
                   </div>
                 </a>
@@ -365,6 +345,32 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="bg-[#1B1B1B]">
+        <div className="flex items-center justify-between px-[6.625rem] py-[4.125rem]">
+          {/* LEFT SIDE */}
+          <div className="flex items-center gap-[1.5rem]">
+            <a href="">
+              <img src={link1} alt="LinkedIn" />
+            </a>
+
+            <a href="">
+              <img src={github1} alt="GitHub" />
+            </a>
+
+            <a href="" className="text-[#FFFFFF] text-[1.4rem] font-bold">
+              CV
+            </a>
+
+            <a href="">
+              <img src={email1} alt="Email" />
+            </a>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <h1 className="text-[#F2F2F2] text-[2.5rem] font-medium">Gio</h1>
+        </div>
+      </footer>
     </main>
   );
 }
