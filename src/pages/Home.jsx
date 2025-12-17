@@ -28,11 +28,11 @@ export default function Home() {
 
       <h1
         id="Header"
-        className="font-inter font-bold text-[2rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[6.25rem] -tracking-[0.02rem]  -lg:tracking-[0.05rem] max-w-[1200px] mx-auto text-center lg:leading-[0.95] py-[-4rem] md:py-[6rem] lg:py-[11.625rem]"
+        className="font-inter font-bold text-[2rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[6.25rem] -tracking-[0.02rem]  -lg:tracking-[0.05rem] max-w-[1200px] mx-auto text-center lg:leading-[0.95] py-[4rem] md:py-[6rem] leading-[1.15] lg:py-[11.625rem]"
       >
         <span className="text-[#7544B1]">Modern Web Developer</span>{" "}
-        <span className="block md:inline">Delivering</span>
-        Full-Stack Solutions
+        <span className="block md:inline">Delivering</span>{" "}
+        <span>Full-Stack Solutions</span>
       </h1>
 
       <section
@@ -40,16 +40,16 @@ export default function Home() {
         className="bg-[#EBEBEB] mx-4 px-6 py-8 rounded-xl lg:mx-[2.5rem] lg:px-[7.063rem] lg:py-[4.625rem]"
       >
         <div className="mx-auto flex max-w-6xl items-start flex-col lg:flex-row lg:items-start lg:gap-30 lg:justify-center gap-10 ">
-          <div className="flex max-w-md flex-col gap-4 text-center lg:text-left">
-            <h1 className="font-black font-inter text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] leading-[0.8] tracking-[-0.01em]">
+          <div className="flex max-w-md flex-col gap-4 text-center text-left lg:text-left">
+            <h1 className="sm:text-left font-black font-inter text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] leading-[0.8] tracking-[-0.01em]">
               Gio Patrick
             </h1>
             <img
               src={arrow}
               alt="underline"
-              className="w-[14] mx-auto lg:mx-0 -mt-4"
+              className="lg:w-[20rem] w-[12rem] lg:mx-auto lg:mx-0 -mt-4"
             />
-            <h3 className="font-dm font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] tracking-[-0.06em] leading-[0.8] text-[#7545B0]">
+            <h3 className="font-dm font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] tracking-[-0.06em] leading-[0.5] text-[#7545B0]">
               Full-Stack Developer
             </h3>
 
@@ -76,7 +76,7 @@ export default function Home() {
               <div className="flex gap-1.25 font-bold items-center">
                 <a
                   href="https://www.dropbox.com/scl/fi/qdv090ftwiaq3wj2jt8hp/GioCimeni_CV.pdf?rlkey=a0w3ehad41odrmtanp1thctfy&st=ri9dqp0v&dl=0"
-                  className="text-[1.1rem]"
+                  className="text-[1rem]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -84,7 +84,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://www.dropbox.com/scl/fi/qdv090ftwiaq3wj2jt8hp/GioCimeni_CV.pdf?rlkey=a0w3ehad41odrmtanp1thctfy&st=ri9dqp0v&dl=0"
-                  className="text-[1.2rem] hover:underline"
+                  className="text-[1.2rem] hover:underline pl-1"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -93,7 +93,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="max-w-xl text-[1rem] md:text-[1.125rem] leading-relaxed lg:text-left text-center self-center">
+          <p className="max-w-xl text-[1rem] md:text-[1.125rem] leading-relaxed lg:text-left text-left text-center self-center">
             I’m a BSIT graduate and full-stack developer building modern web
             applications with React and Tailwind CSS on the frontend, and PHP
             with Laravel on the backend. I focus on role-based systems,
@@ -102,42 +102,57 @@ export default function Home() {
             reliability, and I adapt quickly to new tools and project needs.
           </p>
         </div>
-        <div className="mx-auto lg:mx-30 max-w-2xl rounded-xl border border-gray-400 p-4 mt-10">
+        <div className="mx-auto max-w-5xl rounded-xl border border-gray-400 p-4 mt-10">
           <div className="space-y-6">
             <div>
               <h2 className="mb-4 text-lg font-semibold">Tech Stack</h2>
+
               <div className="space-y-6">
+                {/* Frontend + Backend */}
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {/* Frontend */}
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-semibold">Frontend</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["JavaScript", "React", "Tailwind CSS"].map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-gray-300 px-3 py-1 text-sm"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Backend */}
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-semibold">Backend</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["PHP", "Laravel", "MySQL", "RESTful API"].map(
+                        (item) => (
+                          <span
+                            key={item}
+                            className="rounded-full border border-gray-300 px-3 py-1 text-sm"
+                          >
+                            {item}
+                          </span>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Development Tools (full width) */}
                 <div className="space-y-2">
-                  <h3 className="text-sm font-semibold">Frontend</h3>
-                  <div className="flex flex-wrap gap-2 pb-3">
-                    {["JavaScript", "React", "Tailwind CSS"].map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-gray-300 px-3 py-1 text-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-sm font-semibold">Backend</h3>
-                  <div className="flex flex-wrap gap-2 pb-3 ">
-                    {["PHP", "Laravel", "MySQL", "RESTful API"].map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-gray-300 px-3 py-1 text-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
                   <h3 className="text-sm font-semibold">Development Tools</h3>
-                  <div className="flex flex-wrap gap-2 pb-3">
+                  <div className="flex flex-wrap gap-2">
                     {[
                       "VSCode",
                       "XAMPP",
                       "Herd",
-                      "PostMan",
-                      "Git & Github",
+                      "Postman",
+                      "Git & GitHub",
                       "Figma",
                       "Canva",
                     ].map((item) => (
@@ -171,7 +186,7 @@ export default function Home() {
 
       <section id="Projects" className="bg-[#EBEBEB] py-[6.25rem]">
         <div className="px-[2.375rem]">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4">
+          <div className="lg:mx-auto flex max-w-6xl flex-col lg:items-center items-left lg:justify-center gap-4">
             <h1 className="font-black font-inter text-[3.75rem] tracking-[-0.01em]">
               Projects
             </h1>
@@ -404,6 +419,11 @@ export default function Home() {
       lg:px-[6.625rem]
       lg:py-[4.125rem]"
         >
+          <a href="#Header">
+            <h1 className="text-[#F2F2F2] text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] font-medium">
+              Gio
+            </h1>
+          </a>
           <div className="flex items-center gap-6">
             <a
               href="https://www.linkedin.com/in/giocimeni/ "
@@ -450,12 +470,6 @@ export default function Home() {
               />
             </a>
           </div>
-
-          <a href="#Header">
-            <h1 className="text-[#F2F2F2] text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] font-medium">
-              Gio
-            </h1>
-          </a>
         </div>
       </footer>
     </main>
