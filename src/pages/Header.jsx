@@ -70,7 +70,7 @@ export default function Header() {
             : "max-h-0 opacity-0 -translate-y-2"
         }`}
       >
-        <div className="mt-3 px-5 rounded-l bg-[#EBEBEB] p-6">
+        <div className="px-5 rounded-l bg-[#EBEBEB] p-3">
           <ul className="flex flex-col gap-4 text-[1.25rem] font-dm">
             <li>
               <a href="#About" onClick={() => setOpen(false)}>

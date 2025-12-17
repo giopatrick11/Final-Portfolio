@@ -28,7 +28,7 @@ export default function Home() {
 
       <h1
         id="Header"
-        className="font-inter font-bold text-[2.5rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[6.25rem] -tracking-[0.02rem]  -lg:tracking-[0.05rem] max-w-[1200px] mx-auto text-center lg:leading-[0.95] py-[-4rem] md:py-[6rem] lg:py-[11.625rem]"
+        className="font-inter font-bold text-[2rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[6.25rem] -tracking-[0.02rem]  -lg:tracking-[0.05rem] max-w-[1200px] mx-auto text-center lg:leading-[0.95] py-[-4rem] md:py-[6rem] lg:py-[11.625rem]"
       >
         <span className="text-[#7544B1]">Modern Web Developer</span>{" "}
         <span className="block md:inline">Delivering</span>
