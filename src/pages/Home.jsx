@@ -75,7 +75,7 @@ export default function Home() {
               </a>
               <div className="flex gap-1.25 font-bold items-center">
                 <a
-                  href="https://www.dropbox.com/scl/fi/qdv090ftwiaq3wj2jt8hp/GioCimeni_CV.pdf?rlkey=a0w3ehad41odrmtanp1thctfy&st=ri9dqp0v&dl=0"
+                  href="https://drive.google.com/file/d/1ZsAPtXySOsDDiYm2y8AvkZx0o0xNApvA/view?usp=sharing"
                   className="text-[1rem]"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -83,7 +83,7 @@ export default function Home() {
                   CV
                 </a>
                 <a
-                  href="https://www.dropbox.com/scl/fi/qdv090ftwiaq3wj2jt8hp/GioCimeni_CV.pdf?rlkey=a0w3ehad41odrmtanp1thctfy&st=ri9dqp0v&dl=0"
+                  href="https://drive.google.com/file/d/1ZsAPtXySOsDDiYm2y8AvkZx0o0xNApvA/view?usp=sharing"
                   className="text-[1.2rem] hover:underline pl-1"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -450,7 +450,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://www.dropbox.com/scl/fi/qdv090ftwiaq3wj2jt8hp/GioCimeni_CV.pdf?rlkey=a0w3ehad41odrmtanp1thctfy&st=ri9dqp0v&dl=0"
+              href="https://drive.google.com/file/d/1ZsAPtXySOsDDiYm2y8AvkZx0o0xNApvA/view?usp=sharing"
               className="text-[#FFFFFF] text-[1.4rem] font-bold hover:underline"
               target="_blank"
               rel="noopener noreferrer"
