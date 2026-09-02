@@ -1,477 +1,248 @@
-import { useState } from "react";
 import Header from "./Header.jsx";
+import ProjectCard from "../components/ProjectCard.jsx";
+import SectionHeading from "../components/SectionHeading.jsx";
+import {
+  certificates,
+  education,
+  experience,
+  projects,
+  skillGroups,
+} from "../data/portfolio.js";
 
-import arrow from "../assets/arrow-2.svg";
-import email from "../assets/email.svg";
-import github from "../assets/github.svg";
-import react from "../assets/react.svg";
-import tailwind from "../assets/tailwind.svg";
-import php from "../assets/php.svg";
-import laravel from "../assets/laravel(2).svg";
-import mysql from "../assets/mysql.svg";
-import vite from "../assets/vite.svg";
-import arrow1 from "../assets/arrow(1).svg";
-import login from "../assets/login.svg";
-import signup from "../assets/signup.svg";
-import petrack1 from "../assets/petrack1.svg";
-import petrack2 from "../assets/petrack2.svg";
-import vk1 from "../assets/vk1.svg";
-import vk2 from "../assets/vk2.svg";
-import link1 from "../assets/link1.svg";
-import github1 from "../assets/github1.svg";
-import email1 from "../assets/email1.svg";
+const links = {
+  email: "mailto:giopatrick11@gmail.com",
+  github: "https://github.com/giopatrick11",
+  linkedin: "https://linkedin.com/in/giocimeni",
+  resume: "/Gio-Patrick-Cimeni-Resume.pdf",
+};
 
 export default function Home() {
   return (
-    <main className="">
+    <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Header />
 
-      <h1
-        id="Header"
-        className="font-inter font-bold text-[2rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[6.25rem] -tracking-[0.02rem]  -lg:tracking-[0.05rem] max-w-[1200px] mx-auto text-center lg:leading-[0.95] py-[4rem] md:py-[6rem] leading-[1.15] lg:py-[11.625rem]"
-      >
-        <span className="text-[#7544B1]">Modern Web Developer</span>{" "}
-        <span className="block md:inline">Delivering</span>{" "}
-        <span>Full-Stack Solutions</span>
-      </h1>
+      <main id="main-content">
+        <section className="hero section-shell" id="top">
+          <div className="hero-copy">
+            <p className="eyebrow"><span /> Full-stack developer · Pasig, Philippines</p>
+            <h1>I build reliable software for real-world workflows.</h1>
+            <p className="hero-summary">
+              I’m Gio Patrick Cimeni, a software developer focused on full-stack
+              web applications, clear interfaces, and maintainable backend systems.
+            </p>
+            <div className="hero-actions">
+              <a className="button" href="#projects">View selected work <span aria-hidden="true">↗</span></a>
+              <a className="text-link" href="#contact">Contact me <span aria-hidden="true">→</span></a>
+            </div>
+            <div className="availability">
+              <span className="status-dot" aria-hidden="true" />
+              Open to software development internships and full-stack opportunities
+            </div>
+          </div>
 
-      <section
-        id="About"
-        className="bg-[#EBEBEB] mx-4 px-6 py-8 rounded-xl lg:mx-[2.5rem] lg:px-[7.063rem] lg:py-[4.625rem]"
-      >
-        <div className="mx-auto flex max-w-6xl items-start flex-col lg:flex-row lg:items-start lg:gap-30 lg:justify-center gap-10 ">
-          <div className="flex max-w-md flex-col gap-4 text-center text-left lg:text-left">
-            <h1 className="sm:text-left font-black font-inter text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] leading-[0.8] tracking-[-0.01em]">
-              Gio Patrick
-            </h1>
-            <img
-              src={arrow}
-              alt="underline"
-              className="lg:w-[20rem] w-[12rem] lg:mx-auto lg:mx-0 -mt-4"
+          <div className="profile-frame" aria-label="Profile image placeholder">
+            <div className="profile-placeholder">
+              <span className="profile-initials">GC</span>
+              <span className="profile-label">Profile photo</span>
+            </div>
+            <div className="profile-meta">
+              <span>Full-stack developer</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-about" id="about">
+          <div className="section-shell">
+            <SectionHeading
+              eyebrow="About"
+              title="Thoughtful interfaces. Dependable systems."
+              description="A practical approach to software shaped by real operational workflows."
             />
-            <h3 className="font-dm font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] tracking-[-0.06em] leading-[0.5] text-[#7545B0]">
-              Full-Stack Developer
-            </h3>
 
-            <div className="flex flex-col font-dm text-[1.1rem] md:text-[1.25rem] tracking-[-0.01em] items-start">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=giopatrick11@gmail.com"
-                className="flex items-center font-bold text-[1.25rem] gap-2 hover:underline"
-                alt="Email Icon"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={email} />
-                giopatrick11@gmail.com
-              </a>
-              <a
-                href="https://github.com/giopatrick11"
-                className="flex items-center font-bold text-[1.25rem] gap-2 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={github} alt="Github Icon" />
-                giopatrick11
-              </a>
-              <div className="flex gap-1.25 font-bold items-center">
-                <a
-                  href="https://drive.google.com/file/d/1ZsAPtXySOsDDiYm2y8AvkZx0o0xNApvA/view?usp=sharing"
-                  className="text-[1rem]"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CV
+            <div className="about-grid">
+              <div className="about-copy">
+                <p className="about-lead">
+                  I’m an Information Technology student and full-stack developer
+                  building applications across the interface, API, and database layers.
+                </p>
+                <p>
+                  My recent work includes clinic operations, project tracking,
+                  restaurant point-of-sale, and AI-assisted support systems. I care
+                  about making complex workflows clear for users while keeping the
+                  code behind them structured and maintainable.
+                </p>
+                <a className="text-link" href={links.resume} target="_blank" rel="noreferrer">
+                  View latest resume <span aria-hidden="true">↗</span>
                 </a>
-                <a
-                  href="https://drive.google.com/file/d/1ZsAPtXySOsDDiYm2y8AvkZx0o0xNApvA/view?usp=sharing"
-                  className="text-[1.2rem] hover:underline pl-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  cvlink.com
-                </a>
+              </div>
+
+              <div className="focus-grid" aria-label="Development focus areas">
+                <div className="focus-card">
+                  <span>01</span>
+                  <h3>Full-stack systems</h3>
+                  <p>Connected experiences across frontend, backend, APIs, and data.</p>
+                </div>
+                <div className="focus-card">
+                  <span>02</span>
+                  <h3>Workflow-first UX</h3>
+                  <p>Interfaces designed around the tasks people need to complete.</p>
+                </div>
+                <div className="focus-card">
+                  <span>03</span>
+                  <h3>Database design</h3>
+                  <p>Structured, reliable data models for operational applications.</p>
+                </div>
               </div>
             </div>
           </div>
-          <p className="max-w-xl text-[1rem] md:text-[1.125rem] leading-relaxed lg:text-left text-left text-center self-center">
-            I’m a BSIT graduate and full-stack developer building modern web
-            applications with React and Tailwind CSS on the frontend, and PHP
-            with Laravel on the backend. I focus on role-based systems,
-            structured data, and responsive interfaces designed around real user
-            workflows. I value clean, maintainable code, performance, and
-            reliability, and I adapt quickly to new tools and project needs.
-          </p>
-        </div>
-        <div className="mx-auto max-w-5xl rounded-xl border border-gray-400 p-4 mt-10">
-          <div className="space-y-6">
+        </section>
+
+        <section className="section section-dark" id="experience">
+          <div className="section-shell">
+            <SectionHeading
+              eyebrow="Experience"
+              title="Building software for operational workflows."
+              description="Hands-on development across clinical operations, transaction systems, and role-based applications."
+              light
+            />
+
+            <article className="experience-card">
+              <div className="experience-meta">
+                <p>{experience.period}</p>
+                <span>{experience.stack.join(" · ")}</span>
+              </div>
+              <div className="experience-body">
+                <p className="experience-company">{experience.company}</p>
+                <h3>{experience.role}</h3>
+                <ul>
+                  {experience.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="section section-projects" id="projects">
+          <div className="section-shell">
+            <SectionHeading
+              eyebrow="Selected work"
+              title="Systems built around real use cases."
+              description="Current projects from support automation, project operations, and restaurant transactions."
+            />
+
+            <div className="project-list">
+              {projects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-skills" id="skills">
+          <div className="section-shell">
+            <SectionHeading
+              eyebrow="Skills"
+              title="A practical full-stack toolkit."
+              description="Technologies used across coursework, professional work, and current projects."
+            />
+
+            <div className="skills-grid">
+              {skillGroups.map((group) => (
+                <article className="skill-group" key={group.title}>
+                  <h3>{group.title}</h3>
+                  <div>
+                    {group.items.map((item) => <span key={item}>{item}</span>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-education" id="education">
+          <div className="section-shell">
+            <SectionHeading
+              eyebrow="Education"
+              title="Database-focused IT foundation."
+              description="Formal study supported by academic recognition and focused technical training."
+            />
+
+            <div className="education-grid">
+              <article className="education-card">
+                <div className="education-topline">
+                  <span>{education.period}</span>
+                  <span>{education.expected}</span>
+                </div>
+                <p className="education-school">{education.school}</p>
+                <h3>{education.degree}</h3>
+
+                <div className="education-details">
+                  <div>
+                    <span>Current GPA</span>
+                    <strong>{education.gpa}</strong>
+                  </div>
+                  <div>
+                    <span>Academic honors</span>
+                    <p>{education.honors.join(" · ")}</p>
+                  </div>
+                </div>
+
+                <div className="thesis-note">
+                  <span>Undergraduate thesis · Ongoing</span>
+                  <p>{education.thesis}</p>
+                </div>
+              </article>
+
+              <div className="certificate-list">
+                <p className="certificate-label">Certificates</p>
+                {certificates.map((certificate) => (
+                  <article className="certificate-card" key={certificate.title}>
+                    <span>{certificate.issuer}</span>
+                    <h3>{certificate.title}</h3>
+                    <p>{certificate.detail}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-contact" id="contact">
+          <div className="section-shell contact-grid">
             <div>
-              <h2 className="mb-4 text-lg font-semibold">Tech Stack</h2>
+              <p className="section-eyebrow">Contact</p>
+              <h2>Let’s build something useful.</h2>
+              <p>
+                I’m open to software development internships and full-stack
+                opportunities. If my work fits what your team is building, I’d
+                be glad to connect.
+              </p>
+            </div>
 
-              <div className="space-y-6">
-                {/* Frontend + Backend */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  {/* Frontend */}
-                  <div className="space-y-2">
-                    <h3 className="text-sm font-semibold">Frontend</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["JavaScript", "React", "Tailwind CSS"].map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-gray-300 px-3 py-1 text-sm"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Backend */}
-                  <div className="space-y-2">
-                    <h3 className="text-sm font-semibold">Backend</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["PHP", "Laravel", "MySQL", "RESTful API"].map(
-                        (item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-gray-300 px-3 py-1 text-sm"
-                          >
-                            {item}
-                          </span>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Development Tools (full width) */}
-                <div className="space-y-2">
-                  <h3 className="text-sm font-semibold">Development Tools</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "VSCode",
-                      "XAMPP",
-                      "Herd",
-                      "Postman",
-                      "Git & GitHub",
-                      "Figma",
-                      "Canva",
-                    ].map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-gray-300 px-3 py-1 text-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div className="contact-actions">
+              <a className="button button-light" href={links.email}>Send an email <span aria-hidden="true">↗</span></a>
+              <a href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a href={links.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <a href={links.resume} target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <div className="flex flex-wrap py-8 md:gap-10 md:py-12 lg:gap-[5rem] lg:py-[5.75rem] gap-6 justify-center items-center">
-        <img src={react} alt="React Logo" className="h-8 md:h-10 lg:h-12" />
-        <img
-          src={tailwind}
-          alt="Tailwind Logo"
-          className="h-8 md:h-10 lg:h-12"
-        />
-        <img src={php} alt="PHP Logo" className="h-8 md:h-10 lg:h-12" />
-        <img src={laravel} alt="Laravel Logo" className="h-8 md:h-10 lg:h-12" />
-        <img src={mysql} alt="MySQL Logo" className="h-8 md:h-10 lg:h-12" />
-        <img src={vite} alt="Viite Logo" className="h-8 md:h-10 lg:h-12" />
-      </div>
-
-      <section id="Projects" className="bg-[#EBEBEB] py-[6.25rem]">
-        <div className="px-[2.375rem]">
-          <div className="lg:mx-auto flex max-w-6xl flex-col lg:items-center items-left lg:justify-center gap-4">
-            <h1 className="font-black font-inter text-[3.75rem] tracking-[-0.01em]">
-              Projects
-            </h1>
-            <img
-              src={arrow}
-              alt="underline"
-              className="w-[16.188rem] rotate-180 -mt-6 "
-            />
-            <h3 className="font-dm font-bold text-[2.5rem] tracking-[-0.06em] -mt-4 text-[#7545B0]">
-              Recent Works
-            </h3>
-          </div>
-
-          <div className="py-3 lg:py-[4.438rem]">
-            <div className="items-start flex flex-col">
-              <h3 className="font-dm text-[2rem] font-bold tracking-[-0.05em]">
-                Laundry Shop
-              </h3>
-              <p className="italic text-[1.25rem] tracking-[-0.05em] py-2   ">
-                React • Tailwind • Laravel • PHP • Javascript • MySQL • RESTful
-                API
-              </p>
-              <p className="text-[1.25rem] tracking-[-0.05em] max-w-[40rem]">
-                A full-stack Laundry Shop Management System featuring secure
-                role-based authentication for administrators and secretaries.
-                Includes login and user management with form validation, a clean
-                and responsive interface, and seamless integration between a
-                React frontend, Laravel API, and MySQL database to ensure
-                reliable data handling and smooth daily operations.
-              </p>
-              <a
-                href="https://github.com/giopatrick11/Laundry-Shop-Crud"
-                className="underline text-[1.25rem] flex gap-1 py-2 group"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Check on github
-                <img src={arrow1} alt="Arrow" />
-              </a>
-            </div>
-
-            <div className="flex flex-col items-center gap-6 py-6 md:flex-row md:justify-center md:gap-6 lg:gap-[1.125rem] lg:py-[1.875rem]">
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="https://github.com/giopatrick11/Laundry-Shop-Crud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="w-full h-auto transition-transform duration-200 group-hover:scale-[1.02]">
-                    <img
-                      src={login}
-                      alt="Log-In Page"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                </a>
-                <p className="text-sm font-medium">Log-In Page</p>
-              </div>
-
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="https://github.com/giopatrick11/Laundry-Shop-Crud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
-                    <img
-                      src={signup}
-                      alt="Signup Page"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                </a>
-                <p className="text-sm font-medium">Signup Page</p>
-              </div>
-            </div>
-          </div>
-          <div className="my-12 h-px w-full bg-gray-300" />
-          <div className="py-3 lg:py-[4.438rem]">
-            <div className="items-start flex flex-col">
-              <h3 className="font-dm text-[2rem] font-bold tracking-[-0.05em]">
-                Pet Track
-              </h3>
-              <p className="italic text-[1.25rem] tracking-[-0.05em] py-2   ">
-                React • JavaScript • Tailwind • UI State Management
-              </p>
-              <p className="text-[1.25rem] tracking-[-0.05em] max-w-[40rem]">
-                A frontend-focused pet care management interface built with
-                React, featuring modular components, client-side routing, and
-                dynamic UI state handling. The application presents pet
-                profiles, vaccination tracking, and appointment information
-                through a clean, responsive layout, emphasizing usability,
-                component reusability, and clear information hierarchy for an
-                intuitive pet management experience.
-              </p>
-              <a
-                href="https://github.com/giopatrick11/New-Pet-Track"
-                className="underline text-[1.25rem] flex gap-1 py-2 group"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Check on github
-                <img src={arrow1} alt="Arrow" />
-              </a>
-            </div>
-
-            <div className="flex flex-col items-center gap-6 py-6 md:flex-row md:justify-center md:gap-6 lg:gap-[1.125rem] lg:py-[1.875rem]">
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="https://github.com/giopatrick11/New-Pet-Track"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
-                    <img
-                      src={petrack2}
-                      alt="Log-In Page"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                </a>
-                <p className="text-sm font-medium">Landing Page (Light Mode)</p>
-              </div>
-
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="https://github.com/giopatrick11/New-Pet-Track"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
-                    <img
-                      src={petrack1}
-                      alt="Signup Page"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                </a>
-                <p className="text-sm font-medium">Landing Page (Light Mode)</p>
-              </div>
-            </div>
-          </div>
-          <div className="my-12 h-px w-full bg-gray-300" />
-          <div className="py-3 lg:py-[4.438rem]">
-            <div className="items-start flex flex-col">
-              <h3 className="font-dm text-[2rem] font-bold tracking-[-0.05em]">
-                Videokeman
-              </h3>
-              <p className="italic text-[1.25rem] tracking-[-0.05em] py-2   ">
-                PHP • MySQL • JavaScript • HTML • CSS
-              </p>
-              <p className="text-[1.25rem] tracking-[-0.05em] max-w-[40rem]">
-                A web-based music lyrics platform built with core PHP and MySQL,
-                featuring dynamic song browsing, search, pagination, and
-                user-submitted content. The system supports session-based
-                authentication, lyric viewing pages, random song discovery, and
-                structured database integration to manage songs, users, and
-                uploads through a simple, responsive interface focused on
-                usability and content accessibility.
-              </p>
-              <a
-                href="https://github.com/giopatrick11/Videokeman"
-                className="underline text-[1.25rem] flex gap-1 py-2 group"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Check on github
-                <img src={arrow1} alt="Arrow" />
-              </a>
-            </div>
-
-            <div className="flex flex-col items-center gap-6 py-6 md:flex-row md:justify-center md:gap-6 lg:gap-[1.125rem] lg:py-[1.875rem]">
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="https://github.com/giopatrick11/Videokeman"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
-                    <img
-                      src={vk1}
-                      alt="Log-In Page"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                </a>
-                <p className="text-sm font-medium">Landing Page</p>
-              </div>
-
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="https://github.com/giopatrick11/Videokeman"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.02]">
-                    <img
-                      src={vk2}
-                      alt="Signup Page"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                </a>
-                <p className="text-sm font-medium">Lyrics Page</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-[#1B1B1B]">
-        <div
-          className="   flex
-      flex-col
-      items-center
-      gap-6
-      px-6
-      py-8
-      md:px-10
-      md:py-10
-      lg:flex-row
-      lg:items-center
-      lg:justify-between
-      lg:px-[6.625rem]
-      lg:py-[4.125rem]"
-        >
-          <a href="#Header">
-            <h1 className="text-[#F2F2F2] text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] font-medium">
-              Gio
-            </h1>
+      <footer className="site-footer">
+        <div className="section-shell footer-inner">
+          <a className="brand brand-footer" href="#top" aria-label="Back to top">
+            <span className="brand-mark" aria-hidden="true">GC</span>
+            <span className="brand-name">Gio Patrick Cimeni</span>
           </a>
-          <div className="flex items-center gap-6">
-            <a
-              href="https://www.linkedin.com/in/giocimeni/ "
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={link1}
-                alt="LinkedIn"
-                className="inline-block border-b-2 border-transparent hover:border-white transition-colors duration-200"
-              />
-            </a>
-
-            <a
-              href="https://github.com/giopatrick11"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={github1}
-                alt="GitHub"
-                className="inline-block border-b-2 border-transparent hover:border-white transition-colors duration-200"
-              />
-            </a>
-
-            <a
-              href="https://drive.google.com/file/d/1ZsAPtXySOsDDiYm2y8AvkZx0o0xNApvA/view?usp=sharing"
-              className="text-[#FFFFFF] text-[1.4rem] font-bold hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              CV
-            </a>
-
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=giopatrick11@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={email1}
-                alt="Email"
-                className="inline-block border-b-2 border-transparent hover:border-white transition-colors duration-200"
-              />
-            </a>
-          </div>
+          <p>Full-stack developer · Pasig, Philippines</p>
+          <p>© {new Date().getFullYear()}</p>
         </div>
       </footer>
-    </main>
+    </>
   );
 }

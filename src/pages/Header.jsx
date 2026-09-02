@@ -1,99 +1,66 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const navigation = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#education" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("keydown", closeMenu);
+    return () => window.removeEventListener("keydown", closeMenu);
+  }, []);
+
   return (
-    <header
-      className={`relative transition-colors duration-200 ${
-        open ? "bg-[#EBEBEB]" : "bg-transparent lg:bg-white"
-      }`}
-    >
-      <section className="flex items-center justify-between mx-auto max-w-6xl px-6 lg:px-12 xl:px-0 pt-12">
-        <h1 className="font-dm font-black text-[#7545B0] text-[2.25rem] lg:text-[2.5rem]">
-          Gio
-        </h1>
+    <header className="site-header">
+      <nav className="nav-shell" aria-label="Primary navigation">
+        <a className="brand" href="#top" aria-label="Gio Patrick Cimeni — home">
+          <span className="brand-mark" aria-hidden="true">GC</span>
+          <span className="brand-name">Gio Patrick</span>
+        </a>
 
-        <ul className="hidden lg:flex items-center gap-8 font-dm font-medium text-[1.5rem] leading-none">
-          <li>
-            <a
-              href="#About"
-              className="inline-block transition-all duration-200 hover:-translate-y-1"
-            >
-              About Me
-            </a>
-          </li>
+        <div className="desktop-nav">
+          {navigation.map((item) => (
+            <a key={item.href} href={item.href}>{item.label}</a>
+          ))}
+        </div>
 
-          <li>
-            <a
-              href="#Projects"
-              className="inline-block transition-all duration-200 hover:-translate-y-1"
-            >
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=giopatrick11@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-          inline-flex items-center
-          border border-black rounded-md
-          px-4 py-2.5
-          transition-all duration-200
-          hover:bg-black hover:text-white
-          hover:-translate-y-1
-        "
-            >
-              Contact Me
-            </a>
-          </li>
-        </ul>
+        <a className="button button-small desktop-contact" href="#contact">
+          Let’s talk
+        </a>
 
         <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden flex flex-col gap-1.5"
-          aria-label="Toggle Menu"
+          className="menu-button"
+          type="button"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setOpen((current) => !current)}
         >
-          <span className="h-[2px] w-6 bg-black" />
-          <span className="h-[2px] w-6 bg-black" />
-          <span className="h-[2px] w-6 bg-black" />
+          <span />
+          <span />
         </button>
-      </section>
+      </nav>
 
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          open
-            ? "max-h-[300px] opacity-100 translate-y-0"
-            : "max-h-0 opacity-0 -translate-y-2"
-        }`}
+        id="mobile-navigation"
+        className={`mobile-nav ${open ? "is-open" : ""}`}
+        aria-hidden={!open}
       >
-        <div className="px-5 rounded-l bg-[#EBEBEB] p-3">
-          <ul className="flex flex-col gap-4 text-[1.25rem] font-dm">
-            <li>
-              <a href="#About" onClick={() => setOpen(false)}>
-                About Me
-              </a>
-            </li>
-            <li>
-              <a href="#Projects" onClick={() => setOpen(false)}>
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=giopatrick11@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-              >
-                Contact Me
-              </a>
-            </li>
-          </ul>
-        </div>
+        {navigation.map((item) => (
+          <a key={item.href} href={item.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>
+            {item.label}
+          </a>
+        ))}
+        <a href="#contact" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>Let’s talk</a>
       </div>
     </header>
   );
