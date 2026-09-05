@@ -1,28 +1,93 @@
-function ProjectVisual({ type }) {
-  if (type === "helpdesk") {
+import { useEffect, useState } from "react";
+
+function ProjectVisual({ project }) {
+  const [activeImage, setActiveImage] = useState(0);
+  const imageCount = project.images?.length ?? 0;
+
+  useEffect(() => {
+    if (imageCount < 2) return undefined;
+
+    const autoAdvance = window.setInterval(() => {
+      setActiveImage((current) => (current + 1) % imageCount);
+    }, 5000);
+
+    return () => window.clearInterval(autoAdvance);
+  }, [imageCount]);
+
+  if (imageCount) {
+    const currentImage = project.images[activeImage];
+
     return (
-      <div className="project-visual visual-helpdesk" aria-hidden="true">
-        <div className="window-bar"><span /><span /><span /><b>support / tickets</b></div>
-        <div className="helpdesk-layout">
-          <div className="visual-sidebar">
-            <i className="is-active" /><i /><i /><i />
-          </div>
-          <div className="ticket-list">
-            <div className="ticket-line"><span>New ticket</span><em>High</em></div>
-            <div className="ticket-line"><span>AI triage</span><em>Ready</em></div>
-            <div className="ticket-line"><span>Assigned</span><em>Open</em></div>
-          </div>
-          <div className="ai-panel">
-            <small>AI summary</small>
-            <i /><i /><i className="short" />
-            <strong>Classified</strong>
-          </div>
+      <figure className={`project-visual project-gallery visual-${project.id}`}>
+        <div className="window-bar" aria-hidden="true">
+          <span /><span /><span />
+          <b>{project.id === "helpdesk" ? "AI Helpdesk" : "Restaurant POS"}</b>
         </div>
-      </div>
+
+        <div className="gallery-stage">
+          <a
+            href={currentImage.src}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open full-size image: ${currentImage.label}`}
+          >
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+
+          <button
+            className="gallery-arrow gallery-arrow-previous"
+            type="button"
+            onClick={() =>
+              setActiveImage((current) => (current - 1 + imageCount) % imageCount)
+            }
+            aria-label={`Show previous ${project.title} screenshot`}
+          >
+            <span aria-hidden="true">&#8592;</span>
+          </button>
+          <button
+            className="gallery-arrow gallery-arrow-next"
+            type="button"
+            onClick={() =>
+              setActiveImage((current) => (current + 1) % imageCount)
+            }
+            aria-label={`Show next ${project.title} screenshot`}
+          >
+            <span aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+
+        <figcaption className="gallery-footer">
+          <span>{currentImage.label}</span>
+          <div
+            className="gallery-dots"
+            aria-label={`${project.title} screenshots`}
+          >
+            {project.images.map((image, index) => (
+              <button
+                className={index === activeImage ? "is-active" : ""}
+                type="button"
+                onClick={() => setActiveImage(index)}
+                aria-label={`Show screenshot ${index + 1}: ${image.label}`}
+                aria-current={index === activeImage ? "true" : undefined}
+                key={image.src}
+              />
+            ))}
+          </div>
+          <span>
+            {String(activeImage + 1).padStart(2, "0")} /{" "}
+            {String(imageCount).padStart(2, "0")}
+          </span>
+        </figcaption>
+      </figure>
     );
   }
 
-  if (type === "tracker") {
+  if (project.id === "tracker") {
     return (
       <div className="project-visual visual-tracker" aria-hidden="true">
         <div className="window-bar"><span /><span /><span /><b>projects / overview</b></div>
@@ -76,7 +141,7 @@ export default function ProjectCard({ project }) {
           ) : null}
         </div>
 
-        <ProjectVisual type={project.id} />
+        <ProjectVisual project={project} />
       </div>
 
       <div className="tech-list" aria-label={`${project.title} technologies`}>

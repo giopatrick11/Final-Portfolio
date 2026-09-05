@@ -1,3 +1,15 @@
+import helpdeskDashboard from "../../folder_showcasing/ai_helpdesk/full-page-snap-screenshot (3).png";
+import helpdeskKnowledgeBase from "../../folder_showcasing/ai_helpdesk/full-page-snap-screenshot (5).png";
+import helpdeskLogin from "../../folder_showcasing/ai_helpdesk/full-page-snap-screenshot (1).png";
+import helpdeskTickets from "../../folder_showcasing/ai_helpdesk/7f812d35-3d8e-4e7b-b9aa-d057561fc6f1.jpeg";
+import posAddItem from "../../folder_showcasing/pos/3bd20555-8a9e-4065-b4a7-4864365f38d8.jpeg";
+import posCheckout from "../../folder_showcasing/pos/5310c00c-9008-4672-a2c0-c7482caec534.jpeg";
+import posCashier from "../../folder_showcasing/pos/b4bb146d-bcd4-4a4a-95fb-dcd5dee2bb70.jpeg";
+import posHome from "../../folder_showcasing/pos/full-page-snap-screenshot (1).png";
+import posOrderCreated from "../../folder_showcasing/pos/full-page-snap-screenshot (2).png";
+import posOrders from "../../folder_showcasing/pos/full-page-snap-screenshot (3).png";
+import posTransactions from "../../folder_showcasing/pos/full-page-snap-screenshot (4).png";
+
 export const experience = {
   role: "Full-Stack Developer",
   company: "Ibotika Solutions Inc.",
@@ -26,6 +38,28 @@ export const projects = [
     ],
     roadmap:
       "Planned next: Redis-backed caching and background processing, plus RAG-based knowledge retrieval for context-aware support responses.",
+    images: [
+      {
+        src: helpdeskTickets,
+        alt: "AI Helpdesk ticket queue showing ticket priority, category, status, and an AI-generated triage summary",
+        label: "AI ticket triage",
+      },
+      {
+        src: helpdeskDashboard,
+        alt: "AI Helpdesk dashboard showing support queue and knowledge base activity metrics",
+        label: "Dashboard overview",
+      },
+      {
+        src: helpdeskKnowledgeBase,
+        alt: "AI Helpdesk knowledge base with PDF upload and grounded question panels",
+        label: "Knowledge base",
+      },
+      {
+        src: helpdeskLogin,
+        alt: "AI Helpdesk sign-in screen",
+        label: "Secure sign in",
+      },
+    ],
     technologies: [
       "Python",
       "FastAPI",
@@ -83,6 +117,43 @@ export const projects = [
       "Built a reusable Livewire cashier interface for dine-in, take-out, and delivery orders, including queue numbers and receipt viewing.",
       "Used Laravel database transactions with rollback handling for reliable order, item, payment, and inventory processing.",
       "Created a Filament back office for menu management, transaction history, receipt details, cashier shifts, and Z-reports.",
+    ],
+    images: [
+      {
+        src: posCashier,
+        alt: "Restaurant POS cashier screen with menu items, order types, cart contents, and order total",
+        label: "Cashier and cart",
+      },
+      {
+        src: posAddItem,
+        alt: "Restaurant POS item customization dialog with variants, quantity, notes, and add-ons",
+        label: "Item customization",
+      },
+      {
+        src: posCheckout,
+        alt: "Restaurant POS payment checkout with payment methods, keypad, and cash amount shortcuts",
+        label: "Payment checkout",
+      },
+      {
+        src: posOrderCreated,
+        alt: "Restaurant POS order confirmation with queue number and printable receipt",
+        label: "Receipt and queue",
+      },
+      {
+        src: posOrders,
+        alt: "Restaurant POS order queue with status filters and order actions",
+        label: "Order queue",
+      },
+      {
+        src: posTransactions,
+        alt: "Restaurant POS transaction history with payment details and receipt links",
+        label: "Transaction history",
+      },
+      {
+        src: posHome,
+        alt: "Restaurant POS home screen prompting the cashier to start a shift",
+        label: "Shift workflow",
+      },
     ],
     technologies: [
       "PHP",
