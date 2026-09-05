@@ -19,36 +19,34 @@ const links = {
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <Header />
 
       <main id="main-content">
         <section className="hero section-shell" id="top">
           <div className="hero-copy">
-            <p className="eyebrow"><span /> Full-stack developer · Pasig, Philippines</p>
+            <p className="eyebrow">
+              <span /> Full-stack developer · Iligan, Philippines
+            </p>
             <h1>I build reliable software for real-world workflows.</h1>
             <p className="hero-summary">
               I’m Gio Patrick Cimeni, a software developer focused on full-stack
-              web applications, clear interfaces, and maintainable backend systems.
+              web applications, clear interfaces, and maintainable backend
+              systems.
             </p>
             <div className="hero-actions">
-              <a className="button" href="#projects">View selected work <span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#contact">Contact me <span aria-hidden="true">→</span></a>
+              <a className="button" href="#projects">
+                View selected work <span aria-hidden="true">↗</span>
+              </a>
+              <a className="text-link" href="#contact">
+                Contact me <span aria-hidden="true">→</span>
+              </a>
             </div>
             <div className="availability">
               <span className="status-dot" aria-hidden="true" />
-              Open to software development internships and full-stack opportunities
-            </div>
-          </div>
-
-          <div className="profile-frame" aria-label="Profile image placeholder">
-            <div className="profile-placeholder">
-              <span className="profile-initials">GC</span>
-              <span className="profile-label">Profile photo</span>
-            </div>
-            <div className="profile-meta">
-              <span>Full-stack developer</span>
-              <span>2026</span>
+              Open to software development and full-stack opportunities
             </div>
           </div>
         </section>
@@ -64,16 +62,22 @@ export default function Home() {
             <div className="about-grid">
               <div className="about-copy">
                 <p className="about-lead">
-                  I’m an Information Technology student and full-stack developer
-                  building applications across the interface, API, and database layers.
+                  I’m an Information Technology Graduate and full-stack
+                  developer building applications across the interface, API, and
+                  database layers.
                 </p>
                 <p>
                   My recent work includes clinic operations, project tracking,
-                  restaurant point-of-sale, and AI-assisted support systems. I care
-                  about making complex workflows clear for users while keeping the
-                  code behind them structured and maintainable.
+                  restaurant point-of-sale, and AI-assisted support systems. I
+                  care about making complex workflows clear for users while
+                  keeping the code behind them structured and maintainable.
                 </p>
-                <a className="text-link" href={links.resume} target="_blank" rel="noreferrer">
+                <a
+                  className="text-link"
+                  href={links.resume}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   View latest resume <span aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -81,18 +85,84 @@ export default function Home() {
               <div className="focus-grid" aria-label="Development focus areas">
                 <div className="focus-card">
                   <span>01</span>
+                  <div
+                    className="focus-visual visual-full-stack"
+                    aria-hidden="true"
+                  >
+                    <div className="stack-browser">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <span className="visual-connector" />
+                    <div className="stack-server">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <span className="visual-connector" />
+                    <div className="stack-database">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                  </div>
                   <h3>Full-stack systems</h3>
-                  <p>Connected experiences across frontend, backend, APIs, and data.</p>
+                  <p>
+                    Connected experiences across frontend, backend, APIs, and
+                    data.
+                  </p>
                 </div>
                 <div className="focus-card">
                   <span>02</span>
+                  <div
+                    className="focus-visual visual-workflow"
+                    aria-hidden="true"
+                  >
+                    <div className="workflow-step">
+                      <i />
+                      <i />
+                    </div>
+                    <span className="workflow-arrow">→</span>
+                    <div className="workflow-step">
+                      <i />
+                      <i />
+                    </div>
+                    <span className="workflow-arrow">→</span>
+                    <div className="workflow-step workflow-complete">
+                      <b>✓</b>
+                    </div>
+                  </div>
                   <h3>Workflow-first UX</h3>
-                  <p>Interfaces designed around the tasks people need to complete.</p>
+                  <p>
+                    Interfaces designed around the tasks people need to
+                    complete.
+                  </p>
                 </div>
                 <div className="focus-card">
                   <span>03</span>
+                  <div
+                    className="focus-visual visual-database"
+                    aria-hidden="true"
+                  >
+                    <div className="data-table">
+                      <b />
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <span className="data-relation" />
+                    <div className="data-table data-table-secondary">
+                      <b />
+                      <i />
+                      <i />
+                    </div>
+                  </div>
                   <h3>Database design</h3>
-                  <p>Structured, reliable data models for operational applications.</p>
+                  <p>
+                    Structured, reliable data models for operational
+                    applications.
+                  </p>
                 </div>
               </div>
             </div>
@@ -155,7 +225,9 @@ export default function Home() {
                 <article className="skill-group" key={group.title}>
                   <h3>{group.title}</h3>
                   <div>
-                    {group.items.map((item) => <span key={item}>{item}</span>)}
+                    {group.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
                   </div>
                 </article>
               ))}
@@ -217,17 +289,25 @@ export default function Home() {
               <p className="section-eyebrow">Contact</p>
               <h2>Let’s build something useful.</h2>
               <p>
-                I’m open to software development internships and full-stack
-                opportunities. If my work fits what your team is building, I’d
-                be glad to connect.
+                I’m open to software development and full-stack opportunities.
+                If my work fits what your team is building, I’d be glad to
+                connect.
               </p>
             </div>
 
             <div className="contact-actions">
-              <a className="button button-light" href={links.email}>Send an email <span aria-hidden="true">↗</span></a>
-              <a href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-              <a href={links.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-              <a href={links.resume} target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
+              <a className="button button-light" href={links.email}>
+                Send an email <span aria-hidden="true">↗</span>
+              </a>
+              <a href={links.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+              <a href={links.github} target="_blank" rel="noreferrer">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a href={links.resume} target="_blank" rel="noreferrer">
+                Resume <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </section>
@@ -235,11 +315,17 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="section-shell footer-inner">
-          <a className="brand brand-footer" href="#top" aria-label="Back to top">
-            <span className="brand-mark" aria-hidden="true">GC</span>
+          <a
+            className="brand brand-footer"
+            href="#top"
+            aria-label="Back to top"
+          >
+            <span className="brand-mark" aria-hidden="true">
+              GC
+            </span>
             <span className="brand-name">Gio Patrick Cimeni</span>
           </a>
-          <p>Full-stack developer · Pasig, Philippines</p>
+          <p>Full-stack developer · Iligan, Philippines</p>
           <p>© {new Date().getFullYear()}</p>
         </div>
       </footer>

@@ -23,13 +23,15 @@ export default function Header() {
     <header className="site-header">
       <nav className="nav-shell" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label="Gio Patrick Cimeni — home">
-          <span className="brand-mark" aria-hidden="true">GC</span>
-          <span className="brand-name">Gio Patrick</span>
+          {/* <span className="brand-mark" aria-hidden="true">GC</span> */}
+          <span className="brand-name2">Gio Patrick</span>
         </a>
 
         <div className="desktop-nav">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href}>{item.label}</a>
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
           ))}
         </div>
 
@@ -56,11 +58,22 @@ export default function Header() {
         aria-hidden={!open}
       >
         {navigation.map((item) => (
-          <a key={item.href} href={item.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>
+          <a
+            key={item.href}
+            href={item.href}
+            tabIndex={open ? 0 : -1}
+            onClick={() => setOpen(false)}
+          >
             {item.label}
           </a>
         ))}
-        <a href="#contact" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>Let’s talk</a>
+        <a
+          href="#contact"
+          tabIndex={open ? 0 : -1}
+          onClick={() => setOpen(false)}
+        >
+          Let’s talk
+        </a>
       </div>
     </header>
   );
